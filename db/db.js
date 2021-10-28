@@ -1,6 +1,10 @@
 const mongo = require('mongoose')
 
-mongo.connect('mongodb://localhost:27017/etudiant', (err)=>{
+const url = process.env.URLCONN || "mongodb://localhost:27017"
+
+console.log(url);
+mongo.connect(`${url}/etudiant`, (err)=>{
+    console.log("url", url);
     if (err) {
         console.log("erreur de connexion a mongodb");
         return

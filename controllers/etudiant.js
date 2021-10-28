@@ -27,11 +27,8 @@ exports.getEtudiant = (req, res)=>{
 }
 
 exports.getEtudiantByID = (req, res)=>{
-    console.log("test");
-    console.log(req.params.id_etudiant);
     Etudiant.findOne({id_etudiant: req.params.id_etudiant})
     .then((etudiants)=>{
-        console.log(etudiants);
         if (etudiants) {
            return res.status(201).json({results : true})
         }

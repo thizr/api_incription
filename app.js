@@ -23,6 +23,7 @@ app.use('/api-inscription', router)
 
 app.use((req, res, next)=>{
     res.send('app running')
+    next()
 })
 
 module.exports = app
